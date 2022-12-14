@@ -17,12 +17,14 @@ import com.journeyapps.barcodescanner.ScanContract;
 import com.journeyapps.barcodescanner.ScanOptions;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     private DBHandler dbHandler;
-    ArrayList<Object> naprave = new ArrayList<>();
-    ArrayList<Object> strezniki = new ArrayList<>();
+    List<Object> strezniki = new ArrayList<>();
+    List<Object> naprave = new ArrayList<>();
+
     Button dodaj_napravo_scan;
     Button dodaj_streznik_scan;
     Button vse_naprave;
@@ -54,7 +56,6 @@ public class MainActivity extends AppCompatActivity {
             Intent vse_naprave_intent = new Intent(this, SeznanjeneNaprave.class);
             startActivity(vse_naprave_intent);
         });
-
     }
 
     private void scanNaprava()
@@ -71,11 +72,7 @@ public class MainActivity extends AppCompatActivity {
 
         if(result.getContents() != null && result.getContents().startsWith("naprava")) {
             naprave.add(result.getContents());
-            Log.i("MainActivity", String.valueOf(naprave));
             Toast.makeText(getApplicationContext(), "Skenirana naprava: " + result.getContents(), Toast.LENGTH_SHORT).show();
-
-            Intent next = new Intent(getApplicationContext(), MainActivity.class);
-            startActivity(next);
         }
         else
         {
@@ -97,11 +94,7 @@ public class MainActivity extends AppCompatActivity {
         if(result.getContents() != null && result.getContents().startsWith("streznik"))
         {
             strezniki.add(result.getContents());
-            Log.i("MainActivity", String.valueOf(strezniki));
             Toast.makeText(getApplicationContext(),"Skenirana naprava: " + result.getContents(), Toast.LENGTH_SHORT).show();
-
-            Intent next= new Intent(getApplicationContext(), MainActivity.class);
-            startActivity(next);
         }
         else
         {
