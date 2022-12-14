@@ -1,0 +1,7 @@
+TPO 
+
+1. Zacetni screen ima gumbe: 1 DODAJ NAPRAVO, 2 DODAJ STREZNIK, 3 SEZNANJENE NAPRAVE, 4 SEZNANJENI STREZNIKI
+
+2. Ko klikneš DODAJ NAPRAVO se odpre QR scanner kjer skeniras TV kodo in se ta MSG/KODA/NAPRAVA doda v SEZNANJENE NAPRAVE
+
+3. 
