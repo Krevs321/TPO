@@ -23,7 +23,11 @@ public class MainActivity extends AppCompatActivity {
         dodaj_napravo_scan = findViewById(R.id.dodaj_napravo);
         dodaj_napravo_scan.setOnClickListener(v ->
         {
-            //Kličemo scan metodo za skeniranje
+            scanCode();
+        });
+        dodaj_streznik_scan = findViewById(R.id.dodaj_streznik);
+        dodaj_streznik_scan.setOnClickListener(v ->
+        {
             scanCode();
         });
     }
@@ -41,8 +45,7 @@ public class MainActivity extends AppCompatActivity {
     ActivityResultLauncher<ScanOptions> barLauncher = registerForActivityResult(new ScanContract(), result -> {
 
         if(result.getContents() != null){
-            //Starting a  Intent
-            Intent next= new Intent(getApplicationContext(), MainScreen.class);
+            Intent next= new Intent(getApplicationContext(), MainActivity.class);
             startActivity(next);
         }
     });
