@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">TPOapp</string>
+    <string name="mainScreenText">Pozdravljeni v naši aplikaciji ShareAndWatch</string>
+    <string name="dodaj_napravo_text">Dodaj napravo</string>
+    <string name="dodaj_streznik_text">Dodaj streznik</string>
+    <string name="seznanjene_naprave_text">Seznanjene naprave</string>
+    <string name="seznanjeni_strezniki_text">Seznanjeni strezniki</string>
 </resources>
