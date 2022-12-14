@@ -2,6 +2,7 @@ package com.example.tpoapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 
 import android.os.Bundle;
@@ -60,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     String name = result.getContents();
 
-                    if (name.isEmpty() && !result.getContents().startsWith("test")) {
+                    if (name.isEmpty()) {
                         Toast.makeText(MainActivity.this, "Ni zaznanane naprave", Toast.LENGTH_SHORT).show();
                         return;
                     }
@@ -72,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
                     dodaj_napravo_scan.setText("");
                 }
             });
+            Log.i("MainActivity", dbHandler.toString());
         }
     });
 }
