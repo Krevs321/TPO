@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
             scanStreznik();
         });
 
+        //SEZNANNJENE NAPRAVE GUMB
         vse_naprave.setOnClickListener(l ->{
             Intent vse_naprave_intent = new Intent(this, SeznanjeneNaprave.class);
             startActivity(vse_naprave_intent);
