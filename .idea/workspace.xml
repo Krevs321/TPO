@@ -10,7 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e0a3dfae-2a5f-47f0-add6-c866b585f3ad" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/TPOapp/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TPOapp/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TPOapp/app/src/main/java/com/example/tpoapp/CaptureAct.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TPOapp/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/TPOapp/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TPOapp/app/src/main/java/com/example/tpoapp/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/TPOapp/app/src/main/java/com/example/tpoapp/MainActivity.java" afterDir="false" />
     </list>
