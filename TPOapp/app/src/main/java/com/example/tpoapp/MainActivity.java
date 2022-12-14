@@ -16,9 +16,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.journeyapps.barcodescanner.ScanContract;
 import com.journeyapps.barcodescanner.ScanOptions;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     private DBHandler dbHandler;
+    ArrayList<Object> seznanjene_naprave = new ArrayList<>();
+    ArrayList<Object> seznanjeni_strezniki = new ArrayList<>();
     Button dodaj_napravo_scan;
     Button dodaj_streznik_scan;
 
@@ -27,21 +31,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        dbHandler = new DBHandler(MainActivity.this);
-
         dodaj_napravo_scan = findViewById(R.id.dodaj_napravo);
         dodaj_napravo_scan.setOnClickListener(v ->
         {
-            scanCode();
+            scanNaprava();
         });
         dodaj_streznik_scan = findViewById(R.id.dodaj_streznik);
         dodaj_streznik_scan.setOnClickListener(v ->
         {
-            scanCode();
+            scanStreznik();
         });
     }
 
-    private void scanCode()
+    private void scanNaprava()
     {
         ScanOptions options = new ScanOptions();
         options.setPrompt("Volume up to use flash");
@@ -49,31 +51,47 @@ public class MainActivity extends AppCompatActivity {
         options.setOrientationLocked(true);
         options.setCaptureActivity(CaptureAct.class);
 
-        barLauncher.launch(options);
+        barLauncher1.launch(options);
     }
-    ActivityResultLauncher<ScanOptions> barLauncher = registerForActivityResult(new ScanContract(), result -> {
+    ActivityResultLauncher<ScanOptions> barLauncher1 = registerForActivityResult(new ScanContract(), result -> {
 
-        if(result.getContents() != null){
-            //Intent next= new Intent(getApplicationContext(), MainActivity.class);
-            //startActivity(next);
-            dodaj_napravo_scan.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    String name = result.getContents();
+        if(result.getContents() != null && result.getContents().startsWith("naprava")) {
+            seznanjene_naprave.add(result.getContents());
+            Log.i("MainActivity", String.valueOf(seznanjene_naprave));
+            Toast.makeText(getApplicationContext(), "Skenirana naprava: " + result.getContents(), Toast.LENGTH_SHORT).show();
 
-                    if (name.isEmpty()) {
-                        Toast.makeText(MainActivity.this, "Ni zaznanane naprave", Toast.LENGTH_SHORT).show();
-                        return;
-                    }
+            Intent next = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(next);
+        }
+        else
+        {
+            Toast.makeText(getApplicationContext(),"Narobe skenirana naprava", Toast.LENGTH_SHORT).show();
+        }
+    });
 
-                    dbHandler.addNewCourse(name);
+    private void scanStreznik()
+    {
+        ScanOptions options = new ScanOptions();
+        options.setPrompt("Volume up to use flash");
+        options.setBeepEnabled(true);
+        options.setOrientationLocked(true);
+        options.setCaptureActivity(CaptureAct.class);
 
-                    // after adding the data we are displaying a toast message.
-                    Toast.makeText(MainActivity.this, "Naprava je dodana", Toast.LENGTH_SHORT).show();
-                    dodaj_napravo_scan.setText("");
-                }
-            });
-            Log.i("MainActivity", dbHandler.toString());
+        barLauncher2.launch(options);
+    }
+    ActivityResultLauncher<ScanOptions> barLauncher2 = registerForActivityResult(new ScanContract(), result -> {
+        if(result.getContents() != null && result.getContents().startsWith("streznik"))
+        {
+            seznanjeni_strezniki.add(result.getContents());
+            Log.i("MainActivity", String.valueOf(seznanjeni_strezniki));
+            Toast.makeText(getApplicationContext(),"Skenirana naprava: " + result.getContents(), Toast.LENGTH_SHORT).show();
+
+            Intent next= new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(next);
+        }
+        else
+        {
+            Toast.makeText(getApplicationContext(),"Narobe skenirana naprava", Toast.LENGTH_SHORT).show();
         }
     });
 }
