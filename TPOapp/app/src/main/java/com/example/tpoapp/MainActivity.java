@@ -21,26 +21,39 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private DBHandler dbHandler;
-    ArrayList<Object> seznanjene_naprave = new ArrayList<>();
-    ArrayList<Object> seznanjeni_strezniki = new ArrayList<>();
+    ArrayList<Object> naprave = new ArrayList<>();
+    ArrayList<Object> strezniki = new ArrayList<>();
     Button dodaj_napravo_scan;
     Button dodaj_streznik_scan;
+    Button vse_naprave;
+    Button vsi_strezniki;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //VSI ORIGINALNI GUMBI
         dodaj_napravo_scan = findViewById(R.id.dodaj_napravo);
+        dodaj_streznik_scan = findViewById(R.id.dodaj_streznik);
+        vse_naprave = findViewById(R.id.seznanjene_naprave);
+        vsi_strezniki = findViewById(R.id.seznanjeni_strezniki);
+
+        //SKENIRANJE
         dodaj_napravo_scan.setOnClickListener(v ->
         {
             scanNaprava();
         });
-        dodaj_streznik_scan = findViewById(R.id.dodaj_streznik);
         dodaj_streznik_scan.setOnClickListener(v ->
         {
             scanStreznik();
         });
+
+        vse_naprave.setOnClickListener(l ->{
+            Intent vse_naprave_intent = new Intent(this, SeznanjeneNaprave.class);
+            startActivity(vse_naprave_intent);
+        });
+
     }
 
     private void scanNaprava()
@@ -56,8 +69,8 @@ public class MainActivity extends AppCompatActivity {
     ActivityResultLauncher<ScanOptions> barLauncher1 = registerForActivityResult(new ScanContract(), result -> {
 
         if(result.getContents() != null && result.getContents().startsWith("naprava")) {
-            seznanjene_naprave.add(result.getContents());
-            Log.i("MainActivity", String.valueOf(seznanjene_naprave));
+            naprave.add(result.getContents());
+            Log.i("MainActivity", String.valueOf(naprave));
             Toast.makeText(getApplicationContext(), "Skenirana naprava: " + result.getContents(), Toast.LENGTH_SHORT).show();
 
             Intent next = new Intent(getApplicationContext(), MainActivity.class);
@@ -82,8 +95,8 @@ public class MainActivity extends AppCompatActivity {
     ActivityResultLauncher<ScanOptions> barLauncher2 = registerForActivityResult(new ScanContract(), result -> {
         if(result.getContents() != null && result.getContents().startsWith("streznik"))
         {
-            seznanjeni_strezniki.add(result.getContents());
-            Log.i("MainActivity", String.valueOf(seznanjeni_strezniki));
+            strezniki.add(result.getContents());
+            Log.i("MainActivity", String.valueOf(strezniki));
             Toast.makeText(getApplicationContext(),"Skenirana naprava: " + result.getContents(), Toast.LENGTH_SHORT).show();
 
             Intent next= new Intent(getApplicationContext(), MainActivity.class);
