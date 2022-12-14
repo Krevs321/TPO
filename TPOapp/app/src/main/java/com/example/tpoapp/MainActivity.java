@@ -21,7 +21,6 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private DBHandler dbHandler;
     List<Object> strezniki = new ArrayList<>();
     List<Object> naprave = new ArrayList<>();
 
@@ -73,6 +72,8 @@ public class MainActivity extends AppCompatActivity {
         if(result.getContents() != null && result.getContents().startsWith("naprava")) {
             naprave.add(result.getContents());
             Toast.makeText(getApplicationContext(), "Skenirana naprava: " + result.getContents(), Toast.LENGTH_SHORT).show();
+            DBHelper database = new DBHelper(MainActivity.this);
+            database.addDevice(result.getContents(), result.getContents());
         }
         else
         {
