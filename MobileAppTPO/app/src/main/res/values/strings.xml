@@ -1,9 +1,0 @@
-<resources>
-    <string name="app_name">MobileAppTPO</string>
-    <string name="button_scan_text">Scan</string>
-    <string name="izbira_naprave_text">Izbira naprave</string>
-    <string name="izbira_streznika_text">izbira streznika</string>
-    <string name="seznanjene_naprave_text">Seznanjene naprave</string>
-    <string name="seznanjeni_strezniki_text">Seznanjeni strezniki</string>
-    <string name="textview">TextView</string>
-</resources>
