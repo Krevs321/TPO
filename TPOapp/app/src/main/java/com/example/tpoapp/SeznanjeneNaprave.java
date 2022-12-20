@@ -16,8 +16,6 @@ import java.util.ArrayList;
 
 public class SeznanjeneNaprave extends AppCompatActivity
 {
-    ImageButton back;
-
     RecyclerView recyclerView;
 
     DBHelper myDB;
