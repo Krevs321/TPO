@@ -1,14 +1,16 @@
 package com.example.tpoapp;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class UpdateNaprava extends AppCompatActivity {
+public class UpdateActivity extends AppCompatActivity {
 
     EditText device_id, device_name, device_info;
     Button update_button;
@@ -17,18 +19,27 @@ public class UpdateNaprava extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_naprava);
-
         device_id = findViewById(R.id.id_naprava_update);
         device_name = findViewById(R.id.name_naprava_update);
         device_info = findViewById(R.id.info_naprava_update2);
+
         update_button = findViewById(R.id.update_button);
+
+        //First we call this
+        getAndSetIntentData();
+
         update_button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-
+            public void onClick(View view) {
+                //And only then we call this
+                DBHelper database = new DBHelper(UpdateActivity.this);
+                id = device_id.getText().toString().trim();
+                name = device_name.getText().toString().trim();
+                info = device_info.getText().toString().trim();
+                database.updateData(id, name, info);
             }
         });
-        getAndSetIntentData();
+
     }
 
     void getAndSetIntentData()

@@ -1,6 +1,7 @@
 package com.example.tpoapp;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -17,9 +18,11 @@ import java.util.ArrayList;
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder> {
 
     private Context context;
+    Activity activity;
     private ArrayList device_id, device_name, device_info;
 
-    CustomAdapter(Context context, ArrayList device_id, ArrayList device_name, ArrayList device_info) {
+    CustomAdapter(Activity activity, Context context, ArrayList device_id, ArrayList device_name, ArrayList device_info) {
+        this.activity = activity;
         this.context = context;
         this.device_id = device_id;
         this.device_name = device_name;
@@ -35,18 +38,19 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder holder, @SuppressLint("RecyclerView") final int position) {
         holder.device_id.setText(String.valueOf(device_id.get(position)));
         holder.device_name.setText(String.valueOf(device_name.get(position)));
         holder.device_info.setText(String.valueOf(device_info.get(position)));
-        holder.mainLayout.setOnClickListener(new View.OnClickListener() {
+
+        holder.update_layout.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(context, UpdateNaprava.class);
-                /*intent.putExtra("id", String.valueOf(device_id.get(position)));
+            public void onClick(View v) {
+                Intent intent = new Intent(context, UpdateActivity.class);
+                intent.putExtra("id", String.valueOf(device_id.get(position)));
                 intent.putExtra("name", String.valueOf(device_name.get(position)));
-                intent.putExtra("info", String.valueOf(device_info.get(position)));*/
-                context.startActivity(intent);
+                intent.putExtra("info", String.valueOf(device_info.get(position)));
+                activity.startActivityForResult(intent, 1);
             }
         });
     }
@@ -59,14 +63,14 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     public class MyViewHolder extends RecyclerView.ViewHolder{
 
         TextView device_id, device_name, device_info;
-        LinearLayout mainLayout;
+        LinearLayout update_layout;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             device_id = itemView.findViewById(R.id.device_id);
             device_name = itemView.findViewById(R.id.device_name);
             device_info = itemView.findViewById(R.id.device_info);
-            mainLayout = itemView.findViewById(R.id.mainLayout);
+            update_layout = itemView.findViewById(R.id.update_layout);
         }
     }
 }

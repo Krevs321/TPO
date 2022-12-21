@@ -1,5 +1,6 @@
 package com.example.tpoapp;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.widget.Button;
@@ -7,6 +8,7 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultLauncher;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -39,7 +41,7 @@ public class SeznanjeneNaprave extends AppCompatActivity
 
         storeDataInArrays();
 
-        customAdapter = new CustomAdapter(SeznanjeneNaprave.this, device_id, device_name, device_info);
+        customAdapter = new CustomAdapter(SeznanjeneNaprave.this, this, device_id, device_name, device_info);
         recyclerView.setAdapter(customAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(SeznanjeneNaprave.this));
 
@@ -50,6 +52,16 @@ public class SeznanjeneNaprave extends AppCompatActivity
         });
 
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == 1)
+        {
+            recreate();
+        }
+    }
+
     private void scanNaprava()
     {
         ScanOptions options = new ScanOptions();

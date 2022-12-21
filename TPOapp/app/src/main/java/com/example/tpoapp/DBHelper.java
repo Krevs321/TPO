@@ -20,7 +20,7 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String COLUMN_NAME = "device_name";
     private static final String COLUMN_INFO = "device_info";
 
-    public DBHelper(@Nullable Context context) {
+    DBHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
         this.context = context;
     }
@@ -63,5 +63,21 @@ public class DBHelper extends SQLiteOpenHelper {
             cursor = db.rawQuery(query, null);
         }
         return cursor;
+    }
+
+    void updateData(String row_id, String name, String info)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(COLUMN_NAME, name);
+        cv.put(COLUMN_INFO, info);
+
+        long result = db.update(TABLE_NAME, cv, "_id=?", new String[]{row_id});
+        if(result == -1) {
+            Toast.makeText(context, "Failed to update", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(context, "Updated successfully!", Toast.LENGTH_SHORT).show();
+        }
+
     }
 }
