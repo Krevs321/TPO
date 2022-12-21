@@ -2,14 +2,9 @@ package com.example.tpoapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
-
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
+
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,9 +15,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-
-    List<Object> strezniki = new ArrayList<>();
-    List<Object> naprave = new ArrayList<>();
 
     Button dodaj_napravo_scan;
     Button dodaj_streznik_scan;
@@ -57,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void scanNaprava()
+     private void scanNaprava()
     {
         ScanOptions options = new ScanOptions();
         options.setPrompt("Volume up to use flash");
@@ -70,7 +62,6 @@ public class MainActivity extends AppCompatActivity {
     ActivityResultLauncher<ScanOptions> barLauncher1 = registerForActivityResult(new ScanContract(), result -> {
 
         if(result.getContents() != null && result.getContents().startsWith("naprava")) {
-            naprave.add(result.getContents());
             Toast.makeText(getApplicationContext(), "Skenirana naprava: " + result.getContents(), Toast.LENGTH_SHORT).show();
             DBHelper database = new DBHelper(MainActivity.this);
             database.addDevice(result.getContents(), result.getContents());
@@ -94,7 +85,6 @@ public class MainActivity extends AppCompatActivity {
     ActivityResultLauncher<ScanOptions> barLauncher2 = registerForActivityResult(new ScanContract(), result -> {
         if(result.getContents() != null && result.getContents().startsWith("streznik"))
         {
-            strezniki.add(result.getContents());
             Toast.makeText(getApplicationContext(),"Skenirana naprava: " + result.getContents(), Toast.LENGTH_SHORT).show();
         }
         else

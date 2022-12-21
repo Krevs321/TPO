@@ -9,4 +9,11 @@
     <string name="neki_2">NEKI 2</string>
     <string name="_1">1</string>
     <string name="neki_4">NEKI 4</string>
+    <string name="edit_device_button">EDIT</string>
+    <string name="add_device_button">ADD</string>
+    <string name="remove_device_button">REMOVE</string>
+    <string name="id_naprava_text">ID</string>
+    <string name="info_naprava_text">Info</string>
+    <string name="info_naprava_text_2">Info2</string>
+    <string name="update_button_text">update button</string>/>
 </resources>

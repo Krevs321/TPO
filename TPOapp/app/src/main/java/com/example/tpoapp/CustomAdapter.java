@@ -1,9 +1,11 @@
 package com.example.tpoapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -33,10 +35,10 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+
         holder.device_id.setText(String.valueOf(device_id.get(position)));
         holder.device_name.setText(String.valueOf(device_name.get(position)));
         holder.device_info.setText(String.valueOf(device_info.get(position)));
-
     }
 
     @Override
@@ -47,14 +49,13 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     public class MyViewHolder extends RecyclerView.ViewHolder{
 
         TextView device_id, device_name, device_info;
+        LinearLayout mainLayout;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             device_id = itemView.findViewById(R.id.device_id);
             device_name = itemView.findViewById(R.id.device_name);
             device_info = itemView.findViewById(R.id.device_info);
-
         }
     }
-
 }
