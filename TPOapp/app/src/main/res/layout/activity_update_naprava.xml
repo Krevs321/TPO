@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/mainLayout"
+    tools:context=".UpdateNaprava">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="12dp">
+
+        <EditText
+            android:id="@+id/id_naprava_update"
+            android:layout_width="178dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="220dp"
+            android:text="ID of device"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/name_naprava_update"
+            android:layout_width="178dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:text="Name of device"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.506"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/id_naprava_update" />
+
+        <EditText
+            android:id="@+id/info_naprava_update2"
+            android:layout_width="178dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="24dp"
+            android:text="Info of device"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.506"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/name_naprava_update" />
+
+        <Button
+            android:id="@+id/update_button"
+            android:layout_width="182dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="52dp"
+            android:text="@string/update_button_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.506"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/info_naprava_update2" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

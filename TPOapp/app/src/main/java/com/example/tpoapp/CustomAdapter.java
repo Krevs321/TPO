@@ -1,9 +1,12 @@
 package com.example.tpoapp;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -32,11 +35,20 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-
+    public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
         holder.device_id.setText(String.valueOf(device_id.get(position)));
         holder.device_name.setText(String.valueOf(device_name.get(position)));
         holder.device_info.setText(String.valueOf(device_info.get(position)));
+        holder.mainLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, UpdateNaprava.class);
+                /*intent.putExtra("id", String.valueOf(device_id.get(position)));
+                intent.putExtra("name", String.valueOf(device_name.get(position)));
+                intent.putExtra("info", String.valueOf(device_info.get(position)));*/
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -47,12 +59,14 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     public class MyViewHolder extends RecyclerView.ViewHolder{
 
         TextView device_id, device_name, device_info;
+        LinearLayout mainLayout;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             device_id = itemView.findViewById(R.id.device_id);
             device_name = itemView.findViewById(R.id.device_name);
             device_info = itemView.findViewById(R.id.device_info);
+            mainLayout = itemView.findViewById(R.id.mainLayout);
         }
     }
 }
