@@ -8,86 +8,49 @@
     tools:layout_editor_absoluteY="6dp">
 
 
-    <TextView
-        android:id="@+id/id_naprava"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="224dp"
-        android:text="@string/id_naprava_text"
-        app:layout_constraintEnd_toStartOf="@+id/id_naprava_update"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
+    <EditText
         android:id="@+id/id_naprava_update"
-        android:layout_width="143dp"
-        android:layout_height="21dp"
-        android:layout_marginTop="224dp"
-        android:layout_marginEnd="132dp"
-        android:text="TextView"
+        android:layout_width="178dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="208dp"
+        android:text="ID of device"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/info_naprava"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/info_naprava_text"
-        app:layout_constraintEnd_toStartOf="@+id/info_naprava_update"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/id_naprava" />
-
-    <TextView
+    <EditText
         android:id="@+id/info_naprava_update"
-        android:layout_width="143dp"
-        android:layout_height="21dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="132dp"
-        android:text="TextView"
+        android:layout_width="178dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="24dp"
+        android:text="Info of device"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/id_naprava_update" />
 
-    <TextView
-        android:id="@+id/info_naprava_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
-        android:layout_marginBottom="380dp"
-        android:text="@string/info_naprava_text_2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/info_naprava_update_2"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/info_naprava"
-        app:layout_constraintVertical_bias="0.51" />
-
-    <TextView
+    <EditText
         android:id="@+id/info_naprava_update_2"
-        android:layout_width="143dp"
-        android:layout_height="21dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="132dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="178dp"
+        android:layout_height="40dp"
+        android:text="Info of device 2"
+        app:layout_constraintBottom_toTopOf="@+id/update_button"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/info_naprava_update"
-        app:layout_constraintVertical_bias="0.024" />
+        app:layout_constraintVertical_bias="0.193" />
 
     <Button
         android:id="@+id/update_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="182dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="272dp"
         android:text="@string/update_button_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/info_naprava_update_2"
-        app:layout_constraintVertical_bias="0.223" />
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
