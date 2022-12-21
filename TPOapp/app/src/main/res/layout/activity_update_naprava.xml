@@ -51,5 +51,6 @@
             app:layout_constraintHorizontal_bias="0.506"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/info_naprava_update2" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

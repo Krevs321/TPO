@@ -1,5 +1,6 @@
 package com.example.tpoapp;
 
+import androidx.activity.result.ActivityResultLauncher;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,10 +11,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.journeyapps.barcodescanner.ScanContract;
+import com.journeyapps.barcodescanner.ScanOptions;
+
 public class UpdateActivity extends AppCompatActivity {
 
     EditText device_id, device_name, device_info;
-    Button update_button;
+    Button update_button, update_device;
     String id, name, info;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
