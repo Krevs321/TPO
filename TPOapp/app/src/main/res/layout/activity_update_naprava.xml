@@ -45,12 +45,24 @@
             android:id="@+id/update_button"
             android:layout_width="182dp"
             android:layout_height="46dp"
-            android:layout_marginTop="52dp"
+            android:layout_marginTop="68dp"
             android:text="@string/update_button_text"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.506"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/info_naprava_update2" />
+
+        <Button
+            android:id="@+id/delete_button"
+            android:layout_width="182dp"
+            android:layout_height="46dp"
+            android:text="@string/delete_button_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/update_button"
+            app:layout_constraintVertical_bias="0.108" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

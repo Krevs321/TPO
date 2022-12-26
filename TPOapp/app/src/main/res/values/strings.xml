@@ -14,5 +14,6 @@
     <string name="remove_device_button">REMOVE</string>
     <string name="id_naprava_text">ID</string>
     <string name="info_naprava_text">Info</string>
-    <string name="update_button_text">update button</string>/>
+    <string name="update_button_text">update button</string>
+    <string name="delete_button_text">delete button</string>/>
 </resources>

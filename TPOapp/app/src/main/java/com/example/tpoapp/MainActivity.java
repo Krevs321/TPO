@@ -62,7 +62,6 @@ public class MainActivity extends AppCompatActivity {
     ActivityResultLauncher<ScanOptions> barLauncher1 = registerForActivityResult(new ScanContract(), result -> {
 
         if(result.getContents() != null && result.getContents().startsWith("naprava")) {
-            Toast.makeText(getApplicationContext(), "Skenirana naprava: " + result.getContents(), Toast.LENGTH_SHORT).show();
             DBHelper database = new DBHelper(MainActivity.this);
             database.addDevice(result.getContents(), result.getContents());
         }
