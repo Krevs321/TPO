@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "com.example.mobileapptpo.app-mergeDebugResources-38:/layout/activity_main.xml",
+        "source": "com.example.mobileapptpo.app-main-41:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.mobileapptpo.app-mergeDebugResources-38:/layout/main_screen.xml",
+        "source": "com.example.mobileapptpo.app-main-41:/layout/main_screen.xml"
+    }
+]

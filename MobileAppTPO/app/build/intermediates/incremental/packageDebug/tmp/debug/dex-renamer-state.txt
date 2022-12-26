@@ -1,0 +1,16 @@
+#Tue Dec 13 10:38:11 CET 2022
+path.4=9/classes.dex
+path.3=14/classes.dex
+path.2=11/classes.dex
+path.1=0/classes.dex
+path.0=classes.dex
+base.4=D\:\\Faks\\TPO\\MobileAppTPO\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\9\\classes.dex
+base.3=D\:\\Faks\\TPO\\MobileAppTPO\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\14\\classes.dex
+base.2=D\:\\Faks\\TPO\\MobileAppTPO\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\11\\classes.dex
+base.1=D\:\\Faks\\TPO\\MobileAppTPO\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.0=D\:\\Faks\\TPO\\MobileAppTPO\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+renamed.3=classes4.dex
+renamed.2=classes3.dex
+renamed.1=classes2.dex
+renamed.0=classes.dex
+renamed.4=classes5.dex
