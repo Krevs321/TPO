@@ -54,6 +54,12 @@
             android:screenOrientation="portrait"
             android:stateNotNeeded="true" />
 
+        <activity
+            android:name=".SeznanjeniServerji"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"
+            android:stateNotNeeded="true" />
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

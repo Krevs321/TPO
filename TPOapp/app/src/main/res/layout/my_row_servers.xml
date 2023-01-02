@@ -19,7 +19,7 @@
 
 
         <TextView
-            android:id="@+id/device_id"
+            android:id="@+id/server_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -34,24 +34,24 @@
             app:layout_constraintVertical_bias="0.333" />
 
         <TextView
-            android:id="@+id/device_name"
+            android:id="@+id/username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="24dp"
             android:fontFamily="@font/poppins_semibold"
-            android:text="Device 1"
+            android:text="Server 1"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/device_id"
+            app:layout_constraintStart_toEndOf="@+id/server_id"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/device_info"
+            android:id="@+id/path"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_marginEnd="100dp"
             android:fontFamily="@font/poppins_semibold"
             android:text="192.169.1.1"
             android:textColor="@color/black"
@@ -59,9 +59,9 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.207"
-            app:layout_constraintStart_toEndOf="@+id/device_name"
+            app:layout_constraintHorizontal_bias="0.619"
+            app:layout_constraintStart_toEndOf="@+id/username"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.578" />
+            app:layout_constraintVertical_bias="0.4" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

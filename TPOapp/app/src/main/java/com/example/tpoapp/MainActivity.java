@@ -54,6 +54,11 @@ public class MainActivity extends AppCompatActivity {
             Intent vse_naprave_intent = new Intent(this, SeznanjeneNaprave.class);
             startActivity(vse_naprave_intent);
         });
+
+        vsi_strezniki.setOnClickListener(l ->{
+            Intent vsi_serverji_intent = new Intent(this, SeznanjeniServerji.class);
+            startActivity(vsi_serverji_intent);
+        });
     }
 
      private void scanNaprava()
