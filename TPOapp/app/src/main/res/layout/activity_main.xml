@@ -6,65 +6,90 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <Button
+        android:id="@+id/dodaj_napravo"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="15dp"
+        android:backgroundTint="@color/cardview_dark_background"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="@string/dodaj_napravo_text"
+        app:layout_constraintBottom_toTopOf="@+id/seznanjene_naprave"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <Button
+        android:id="@+id/dodaj_streznik"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="15dp"
+        android:backgroundTint="@color/cardview_dark_background"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="@string/dodaj_streznik_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/dodaj_napravo"
+        app:layout_constraintTop_toTopOf="@+id/dodaj_napravo" />
+
+    <Button
+        android:id="@+id/seznanjene_naprave"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:backgroundTint="@color/cardview_dark_background"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="@string/seznanjene_naprave_text"
+        app:layout_constraintBottom_toTopOf="@+id/seznanjeni_strezniki"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dodaj_napravo" />
+
+    <Button
+        android:id="@+id/seznanjeni_strezniki"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:backgroundTint="@color/cardview_dark_background"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="@string/seznanjeni_strezniki_text"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seznanjene_naprave" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="253dp"
+        android:layout_height="316dp"
+        app:layout_constraintBottom_toTopOf="@+id/dodaj_napravo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:srcCompat="@drawable/video_player_streaming_svgrepo_com" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:backgroundTint="@color/cardview_dark_background"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Connect"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seznanjeni_strezniki" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/mainScreenText"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.259" />
-
-    <Button
-        android:id="@+id/dodaj_napravo"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="196dp"
-        android:layout_marginEnd="10dp"
-        android:text="@string/dodaj_napravo_text"
-        app:layout_constraintEnd_toStartOf="@+id/dodaj_streznik"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <Button
-        android:id="@+id/dodaj_streznik"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="196dp"
-        android:layout_marginEnd="32dp"
-        android:text="@string/dodaj_streznik_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/dodaj_napravo"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <Button
-        android:id="@+id/seznanjene_naprave"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/seznanjene_naprave_text"
-        app:layout_constraintBottom_toTopOf="@+id/seznanjeni_strezniki"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Streaming App"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dodaj_streznik"
-        app:layout_constraintVertical_bias="0.372" />
-
-    <Button
-        android:id="@+id/seznanjeni_strezniki"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="104dp"
-        android:text="@string/seznanjeni_strezniki_text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/seznanjene_naprave" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

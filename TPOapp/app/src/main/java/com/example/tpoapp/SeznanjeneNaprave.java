@@ -37,6 +37,10 @@ public class SeznanjeneNaprave extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.seznanjenenaprave);
 
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
+
         recyclerView = findViewById(R.id.recyclerView);
 
         myDB = new DBHelper(SeznanjeneNaprave.this);

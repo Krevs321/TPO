@@ -28,6 +28,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
+
         //VSI ORIGINALNI GUMBI
         dodaj_napravo_scan = findViewById(R.id.dodaj_napravo);
         dodaj_streznik_scan = findViewById(R.id.dodaj_streznik);

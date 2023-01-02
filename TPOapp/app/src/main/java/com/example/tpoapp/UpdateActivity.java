@@ -26,6 +26,10 @@ public class UpdateActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_naprava);
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
         device_id = findViewById(R.id.id_naprava_update);
         device_name = findViewById(R.id.name_naprava_update);
         device_info = findViewById(R.id.info_naprava_update2);
