@@ -43,9 +43,10 @@ public class MainActivity extends AppCompatActivity {
         {
             scanNaprava();
         });
+
         dodaj_streznik_scan.setOnClickListener(v ->
         {
-            scanStreznik();
+            startActivity(new Intent(MainActivity.this, AddServer.class));
         });
 
         //SEZNANNJENE NAPRAVE GUMB
@@ -70,27 +71,6 @@ public class MainActivity extends AppCompatActivity {
         if(result.getContents() != null && result.getContents().startsWith("naprava")) {
             DBHelper database = new DBHelper(MainActivity.this);
             database.addDevice(result.getContents(), result.getContents());
-        }
-        else
-        {
-            Toast.makeText(getApplicationContext(),"Narobe skenirana naprava", Toast.LENGTH_SHORT).show();
-        }
-    });
-
-    private void scanStreznik()
-    {
-        ScanOptions options = new ScanOptions();
-        options.setPrompt("Volume up to use flash");
-        options.setBeepEnabled(true);
-        options.setOrientationLocked(true);
-        options.setCaptureActivity(CaptureAct.class);
-
-        barLauncher2.launch(options);
-    }
-    ActivityResultLauncher<ScanOptions> barLauncher2 = registerForActivityResult(new ScanContract(), result -> {
-        if(result.getContents() != null && result.getContents().startsWith("streznik"))
-        {
-            Toast.makeText(getApplicationContext(),"Skenirana naprava: " + result.getContents(), Toast.LENGTH_SHORT).show();
         }
         else
         {
