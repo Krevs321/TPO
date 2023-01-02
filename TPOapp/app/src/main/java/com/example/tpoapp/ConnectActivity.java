@@ -1,0 +1,71 @@
+package com.example.tpoapp;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.database.Cursor;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.Spinner;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+
+public class ConnectActivity extends AppCompatActivity {
+
+    DBHelper myDB;
+    Button connect;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_connect);
+
+        HashMap<String, Television> televizije = new HashMap<String, Television>();
+
+        myDB = new DBHelper(ConnectActivity.this);
+
+        Cursor cursor = myDB.readAllData();
+        if(cursor.getCount() == 0) {
+        } else {
+            while (cursor.moveToNext()) {
+                String ime = cursor.getString(1);
+                String ip = cursor.getString(2);
+
+                televizije.put(ime, new Television(ime, ip));
+            }
+        }
+
+        connect = findViewById(R.id.buttonConnect1);
+
+        String[] devices = myDB.getDevices();
+        String[] servers = myDB.getServers();
+
+        Spinner spin1 = (Spinner) findViewById(R.id.spinnerDevice);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, devices);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spin1.setAdapter(adapter);
+
+        Spinner spin2 = (Spinner) findViewById(R.id.spinnerServer);
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, servers);
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spin2.setAdapter(adapter2);
+
+        connect.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Television izbrana = televizije.get(spin1.getSelectedItem().toString());
+
+                System.out.println(izbrana.connect());
+                System.out.println(izbrana.connectToServer(spin2.getSelectedItem().toString()));
+            }
+        });
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
+    }
+}

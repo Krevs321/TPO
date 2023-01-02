@@ -7,30 +7,31 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/dodaj_napravo"
-        android:layout_width="180dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="15dp"
-        android:backgroundTint="@color/cardview_dark_background"
-        android:fontFamily="@font/poppins_semibold"
-        android:text="@string/dodaj_napravo_text"
-        app:layout_constraintBottom_toTopOf="@+id/seznanjene_naprave"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-    <Button
         android:id="@+id/dodaj_streznik"
-        android:layout_width="180dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="50dp"
+        android:layout_width="144dp"
+        android:layout_height="68dp"
         android:layout_marginEnd="15dp"
         android:backgroundTint="@color/cardview_dark_background"
         android:fontFamily="@font/poppins_semibold"
         android:text="@string/dodaj_streznik_text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/dodaj_napravo"
         app:layout_constraintTop_toTopOf="@+id/dodaj_napravo" />
+
+    <Button
+        android:id="@+id/dodaj_napravo"
+        android:layout_width="144dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="15dp"
+        android:backgroundTint="@color/cardview_dark_background"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="@string/dodaj_napravo_text"
+        app:layout_constraintBottom_toTopOf="@+id/seznanjene_naprave"
+        app:layout_constraintEnd_toStartOf="@+id/dodaj_streznik"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <Button
         android:id="@+id/seznanjene_naprave"
@@ -52,7 +53,7 @@
         android:backgroundTint="@color/cardview_dark_background"
         android:fontFamily="@font/poppins_semibold"
         android:text="@string/seznanjeni_strezniki_text"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/buttonConnect"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -69,7 +70,7 @@
         app:srcCompat="@drawable/video_player_streaming_svgrepo_com" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonConnect"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:backgroundTint="@color/cardview_dark_background"

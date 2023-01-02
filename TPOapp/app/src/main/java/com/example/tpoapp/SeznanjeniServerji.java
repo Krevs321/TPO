@@ -13,7 +13,7 @@ public class SeznanjeniServerji extends AppCompatActivity
 {
     RecyclerView recyclerViewServer;
     DBHelper myDB;
-    ArrayList<String> server_id, username, pass, path;
+    ArrayList<String> server_id, username, path;
     CustomAdapterServers customAdapterServers;
 
     protected void onCreate(Bundle savedInstanceState)
@@ -26,7 +26,6 @@ public class SeznanjeniServerji extends AppCompatActivity
         myDB = new DBHelper(SeznanjeniServerji.this);
         server_id = new ArrayList<>();
         username = new ArrayList<>();
-        pass = new ArrayList<>();
         path = new ArrayList<>();
 
         if (getSupportActionBar() != null)
@@ -48,7 +47,6 @@ public class SeznanjeniServerji extends AppCompatActivity
             while (cursor.moveToNext()) {
                 server_id.add(cursor.getString(0));
                 username.add(cursor.getString(1));
-                pass.add(cursor.getString(2));
                 path.add(cursor.getString(3));
             }
         }

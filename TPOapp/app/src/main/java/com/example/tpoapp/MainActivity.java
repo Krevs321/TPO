@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     Button dodaj_streznik_scan;
     Button vse_naprave;
     Button vsi_strezniki;
+    Button connect;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         dodaj_streznik_scan = findViewById(R.id.dodaj_streznik);
         vse_naprave = findViewById(R.id.seznanjene_naprave);
         vsi_strezniki = findViewById(R.id.seznanjeni_strezniki);
+        connect = findViewById(R.id.buttonConnect);
 
         //SKENIRANJE
         dodaj_napravo_scan.setOnClickListener(v ->
@@ -58,6 +60,10 @@ public class MainActivity extends AppCompatActivity {
         vsi_strezniki.setOnClickListener(l ->{
             Intent vsi_serverji_intent = new Intent(this, SeznanjeniServerji.class);
             startActivity(vsi_serverji_intent);
+        });
+
+        connect.setOnClickListener(l ->{
+            startActivity(new Intent(MainActivity.this, ConnectActivity.class));
         });
     }
 

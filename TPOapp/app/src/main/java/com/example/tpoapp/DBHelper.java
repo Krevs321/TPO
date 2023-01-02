@@ -9,6 +9,8 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
+import java.util.ArrayList;
+
 public class DBHelper extends SQLiteOpenHelper {
 
     private Context context;
@@ -170,6 +172,54 @@ public class DBHelper extends SQLiteOpenHelper {
         } else {
             Toast.makeText(context, "Deleted successfully!", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    String[] getDevices()
+    {
+        String query = "SELECT device_name FROM " + TABLE_NAME;
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = null;
+        if(db != null) {
+            cursor = db.rawQuery(query, null);
+        }
+        ArrayList<String> devices = new ArrayList<String>();
+
+        if (cursor != null && cursor.getCount()>0){
+            while(cursor.moveToNext())
+            {
+                devices.add(cursor.getString(0));
+            }
+        }
+        cursor.close();
+
+        String[] devices1 = devices.toArray(new String[devices.size()]);
+
+        return devices1;
+    }
+
+    String[] getServers()
+    {
+        String query = "SELECT username FROM " + TABLE_NAME1;
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = null;
+        if(db != null) {
+            cursor = db.rawQuery(query, null);
+        }
+        ArrayList<String> servers = new ArrayList<String>();
+
+        if (cursor != null && cursor.getCount()>0){
+            while(cursor.moveToNext())
+            {
+                servers.add(cursor.getString(0));
+            }
+        }
+        cursor.close();
+
+        String[] servers1 = servers.toArray(new String[servers.size()]);
+
+        return servers1;
     }
 
 }

@@ -16,6 +16,13 @@
         android:theme="@style/Theme.TPOapp"
         tools:targetApi="31">
         <activity
+            android:name=".ConnectActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".AddServer"
             android:exported="false">
             <meta-data
@@ -53,7 +60,6 @@
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait"
             android:stateNotNeeded="true" />
-
         <activity
             android:name=".SeznanjeniServerji"
             android:parentActivityName=".MainActivity"
