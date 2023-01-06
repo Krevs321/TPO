@@ -9,20 +9,13 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0a3dfae-2a5f-47f0-add6-c866b585f3ad" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TPOapp/.idea/deploymentTargetDropDown.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TPOapp/.idea/deploymentTargetDropDown.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TPOapp/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TPOapp/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TPOapp/app/src/main/java/com/example/tpoapp/ConnectActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/TPOapp/app/src/main/java/com/example/tpoapp/ConnectActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TPOapp/app/src/main/java/com/example/tpoapp/CustomAdapterServers.java" beforeDir="false" afterPath="$PROJECT_DIR$/TPOapp/app/src/main/java/com/example/tpoapp/CustomAdapterServers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TPOapp/app/src/main/java/com/example/tpoapp/SeznanjeniServerji.java" beforeDir="false" afterPath="$PROJECT_DIR$/TPOapp/app/src/main/java/com/example/tpoapp/SeznanjeniServerji.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TPOapp/app/src/main/java/com/example/tpoapp/Television.java" beforeDir="false" afterPath="$PROJECT_DIR$/TPOapp/app/src/main/java/com/example/tpoapp/Television.java" afterDir="false" />
-    </list>
+    <list default="true" id="e0a3dfae-2a5f-47f0-add6-c866b585f3ad" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[RZCT80SAASJ]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
