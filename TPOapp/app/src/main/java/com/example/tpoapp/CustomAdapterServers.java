@@ -1,9 +1,12 @@
 package com.example.tpoapp;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ActionMenuView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -15,14 +18,17 @@ import java.util.ArrayList;
 public class CustomAdapterServers extends RecyclerView.Adapter<CustomAdapterServers.MyViewHolderServers>
 {
     private Context context;
+    Activity activity;
     private ArrayList server_id, username, path;
 
-    CustomAdapterServers(Context context, ArrayList server_id, ArrayList username,  ArrayList path)
+
+    CustomAdapterServers(Activity activity, Context context, ArrayList server_id, ArrayList username, ArrayList path)
     {
         this.context = context;
         this.server_id = server_id;
         this.username = username;
         this.path = path;
+        this.activity = activity;
     }
 
     @NonNull
@@ -39,6 +45,17 @@ public class CustomAdapterServers extends RecyclerView.Adapter<CustomAdapterServ
         holder.server_id.setText(String.valueOf(server_id.get(position)));
         holder.username.setText(String.valueOf(username.get(position)));
         holder.path.setText(String.valueOf(path.get(position)));
+
+        holder.update_layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, UpdateActivity.class);
+                intent.putExtra("id", String.valueOf(server_id.get(position)));
+                intent.putExtra("name", String.valueOf(username.get(position)));
+                intent.putExtra("info", String.valueOf(path.get(position)));
+                activity.startActivityForResult(intent, 1);
+            }
+        });
     }
 
     @Override
@@ -49,13 +66,14 @@ public class CustomAdapterServers extends RecyclerView.Adapter<CustomAdapterServ
     public class MyViewHolderServers extends RecyclerView.ViewHolder{
 
         TextView server_id, username, path;
+        LinearLayout update_layout;
 
         public MyViewHolderServers(@NonNull View itemView) {
             super(itemView);
             server_id = itemView.findViewById(R.id.server_id);
             username = itemView.findViewById(R.id.username);
             path = itemView.findViewById(R.id.path);
-
+            update_layout = itemView.findViewById(R.id.update_layout);
         }
     }
 }

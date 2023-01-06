@@ -2,6 +2,7 @@ package com.example.tpoapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
@@ -18,6 +19,11 @@ public class ConnectActivity extends AppCompatActivity {
 
     DBHelper myDB;
     Button connect;
+    public static Television televizija;
+
+    public static Television getTelevision(){
+        return televizija;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,10 +63,10 @@ public class ConnectActivity extends AppCompatActivity {
         connect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Television izbrana = televizije.get(spin1.getSelectedItem().toString());
-
-                System.out.println(izbrana.connect());
-                System.out.println(izbrana.connectToServer(spin2.getSelectedItem().toString()));
+                televizija = televizije.get(spin1.getSelectedItem().toString());
+                System.out.println(televizija.connect());
+                System.out.println(televizija.connectToServer(spin2.getSelectedItem().toString()));
+                startActivity(new Intent(ConnectActivity.this, FileSystemActivity.class));
             }
         });
 

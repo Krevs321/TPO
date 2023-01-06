@@ -35,7 +35,7 @@ public class SeznanjeniServerji extends AppCompatActivity
 
         storeDataInArrays();
 
-        customAdapterServers = new CustomAdapterServers(SeznanjeniServerji.this,  server_id, username, path);
+        customAdapterServers = new CustomAdapterServers(SeznanjeniServerji.this, this,  server_id, username, path);
         recyclerViewServer.setAdapter(customAdapterServers);
         recyclerViewServer.setLayoutManager(new LinearLayoutManager(SeznanjeniServerji.this));
     }
